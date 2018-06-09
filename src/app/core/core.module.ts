@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OnboardModule } from "./onboard/onboard.module";
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
   imports: [
@@ -8,7 +9,8 @@ import { OnboardModule } from "./onboard/onboard.module";
   ],
   declarations: [],
   exports: [
-    OnboardModule
+    OnboardModule,
+    HeaderModule
   ]
 })
 export class CoreModule { }

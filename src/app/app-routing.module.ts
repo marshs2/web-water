@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { OnboardComponent } from "./core/onboard/onboard.component";
  
 const appRoutes: Routes = [
-  { path: '', component: AppComponent },
   { path: 'onboard', component: OnboardComponent }
 ];
  
