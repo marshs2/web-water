@@ -1,0 +1,52 @@
+ng-sidebar-container {
+    height: 100vh;
+
+    /deep/ aside { 
+        margin: -70px 0 0 0;
+    }
+    
+    /deep/ .ng-sidebar--right {
+        width: 40%;
+        -webkit-box-shadow: 2px 1px 20px -2px rgba(0,0,0,0.29);
+        -moz-box-shadow: 2px 1px 20px -2px rgba(0,0,0,0.29);
+        box-shadow: 2px 1px 20px -2px rgba(0,0,0,0.29);
+    }
+
+    /deep/ .water_can {
+        position: relative;
+        bottom: 60px;
+    }
+
+    // or block
+    /deep/ .or-container {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 10px;
+        clear: both;
+        color: #6a737c;
+        font-variant: small-caps;
+    }
+
+    /deep/ .or-hr {
+        margin-bottom: 0;
+        position: relative;
+        top: 19px;
+        height: 0;
+        border: 0;
+        border-top: 1px solid #e4e6e8;
+        margin: 0px 30px 0px 30px;
+    }
+
+    /deep/ #or {
+        display: inline-block;
+        position: relative;
+        padding: 5px 20px 20px 20px;
+        background-color: #FFF;
+    }
+
+    // Custom Email Id
+    /deep/ .email-id {
+        width: 32rem;
+        margin-left: 30px;
+    }
+}

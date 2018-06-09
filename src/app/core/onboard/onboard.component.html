@@ -1,3 +1,19 @@
-<p>
-  onboard works!
-</p>
+<ng-sidebar-container>
+  <ng-sidebar
+     [(opened)]="opened"
+     [mode]="_MODES[_modeNum]"
+     [position]="_POSITIONS[_positionNum]">
+    <img src="/assets/water_can_icon.svg" alt="Water CAN Icon">
+    <button (click)="toggleOpen()">X</button>
+    <div class="or-container">
+      <hr class="or-hr">
+      <div id="or">or</div>
+    </div>
+    <input class="email-id" type="text" placeholder="Enter your Email ID">
+  </ng-sidebar>
+  <div ng-sidebar-content>
+    <header>
+      <button (click)="toggleOpen()">Toggle sidebar</button>
+    </header>
+  </div>
+</ng-sidebar-container>
