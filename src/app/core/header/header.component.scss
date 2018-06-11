@@ -37,12 +37,19 @@
 }
 
 .loginSignUpBtn:hover{
-    box-shadow: 0px 0px 10px #3988b5;
-    padding: 5% 5%;
+    // box-shadow: 0px 0px 10px #3988b5;
+    border: 1px solid #2295c5;
+    padding: 4% 5%;
+    background-color: #fafeff;
+    .text{
+        color: #2295c5;
+    }
 }
 
 .loginSignUpBtn:active{
-    box-shadow: 0px 0px 10px #3988b5;
+    // box-shadow: 0px 0px 10px #3988b5;
+    border: 1px solid rgb(63, 108, 134);
     padding:4% 5%;
-    margin-bottom: 2%;
+    color: rgb(10 , 28, 37);
+    // margin-bottom: 2%;
 }
