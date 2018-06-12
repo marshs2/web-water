@@ -1,0 +1,55 @@
+.m0{
+    margin: 0 !important;
+}
+
+.pad0{
+    padding: 0 !important;
+}
+
+.headerContainer{
+    height: 65px;
+    box-shadow: 0px 1px 10px #92818161;
+
+    .row{
+      padding: 1% 0;
+      height: 100%;  
+    }
+}
+
+
+.loginSignUpBtn {
+    max-width: 140px;
+    border: 1px solid #CFE4F0;
+    padding: 4% 5%;
+    border-radius: 20px;
+
+    .img{
+        padding: 2% 0;
+    }
+
+    .text{
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        color: #26A8DF;
+    }
+}
+
+.loginSignUpBtn:hover{
+    // box-shadow: 0px 0px 10px #3988b5;
+    border: 1px solid #2295c5;
+    padding: 4% 5%;
+    background-color: #fafeff;
+    .text{
+        color: #2295c5;
+    }
+}
+
+.loginSignUpBtn:active{
+    // box-shadow: 0px 0px 10px #3988b5;
+    border: 1px solid rgb(63, 108, 134);
+    padding:4% 5%;
+    color: rgb(10 , 28, 37);
+    // margin-bottom: 2%;
+}
