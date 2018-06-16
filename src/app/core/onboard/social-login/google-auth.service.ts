@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { UserProfileService } from '../../../shared/user-profile.service';
+
 
 
 @Injectable()
 export class GoogleAuthService {
   public auth2: any;
   public googleProfile: any;
+  
   public googleInit() {
     gapi.load('auth2', () => {
       this.auth2 = gapi.auth2.init({
@@ -20,21 +23,26 @@ export class GoogleAuthService {
       (googleUser) => {
 
         let profile = googleUser.getBasicProfile();
-        console.log('Token || ' + googleUser.getAuthResponse().id_token);
-        console.log('ID: ' + profile.getId());
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
+        // console.log('Token || ' + googleUser.getAuthResponse().id_token);
+        // console.log('ID: ' + profile.getId());
+        // console.log('Name: ' + profile.getName());
+        // console.log('Image URL: ' + profile.getImageUrl());
+        // console.log('Email: ' + profile.getEmail());
         //YOUR CODE HERE
-        this.googleProfile = profile;
-
+        // this.googleProfile = profile;
+        this.sendProfile(profile);
       }, (error) => {
         console.log(JSON.stringify(error, undefined, 2));
       });
   }
 
-  constructor() { 
+  constructor(public userProfileService: UserProfileService) { 
     this.googleInit();
+  }
+
+  sendProfile(profile){
+    // console.log("Sending Profile to user profile service", profile);
+    this.userProfileService.googleUserDetails(profile);
   }
 
 }

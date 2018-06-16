@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { UserProfileService } from '../../shared/user-profile.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() loginSignupClick = new EventEmitter<boolean>();
-  constructor() { }
+  constructor(public userProfile: UserProfileService) { }
 
   ngOnInit() {
   }
