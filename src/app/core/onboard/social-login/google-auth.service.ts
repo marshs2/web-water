@@ -6,6 +6,9 @@ declare var gapi: any;
 export class GoogleAuthService {
   public auth2: any;
   public googleProfile: any;
+  private googlePromise: Promise<any>;
+  private googleResolve: any;
+  private googleReject: any;
   
   public googleInit() {
      gapi.load('auth2', () => {
@@ -16,11 +19,23 @@ export class GoogleAuthService {
       });
       this.attachSignin(document.getElementById('googleBtn'));
     });
+
+    this.googlePromise = new Promise(function(resolve, reject){
+      debugger;
+      this.googleResolve = resolve;
+      this.googleReject = reject;
+    }.bind(this));
   }
+
+  public getGooglePromise() {
+    return this.googlePromise;
+  }
+
+ 
+
   public attachSignin(element) {
     this.auth2.attachClickHandler(element, {},
       (googleUser) => {
-
         let profile = googleUser.getBasicProfile();
         // console.log('Token || ' + googleUser.getAuthResponse().id_token);
         // console.log('ID: ' + profile.getId());
@@ -29,9 +44,11 @@ export class GoogleAuthService {
         // console.log('Email: ' + profile.getEmail());
         //YOUR CODE HERE
         // this.googleProfile = profile;
+        this.googleResolve(profile);
         this.sendProfile(profile);
       }, (error) => {
         console.log(JSON.stringify(error, undefined, 2));
+        this.googleReject(error)
       });
   }
 
