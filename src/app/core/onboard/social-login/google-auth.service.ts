@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserProfileService } from '../../../shared/user-profile.service';
-
-
+declare var gapi: any;
 
 @Injectable()
 export class GoogleAuthService {
@@ -9,7 +8,7 @@ export class GoogleAuthService {
   public googleProfile: any;
   
   public googleInit() {
-    gapi.load('auth2', () => {
+     gapi.load('auth2', () => {
       this.auth2 = gapi.auth2.init({
         client_id: '654751209462-hvcjq502b150dg09hrp3qev04vud4qqn.apps.googleusercontent.com',
         'cookie_policy': 'single_host_origin',
